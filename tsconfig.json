@@ -1,28 +1,27 @@
 {
-	"include": ["src/**/*", "webpack.config.ts"],
-	"exclude": ["node_modules/*", "__sapper__/*", "public/*"],
-	"compilerOptions": {
-		"moduleResolution": "node16",
-		"target": "es2022",
-		"lib": ["es2022", "dom"],
-		"module": "es2022",
-		"importsNotUsedAsValues": "remove",
-		"isolatedModules": true,
-		"esModuleInterop": true,
-		"sourceMap": true,
-		"strict": false,
-		"baseUrl": ".",
-		"paths": {
-			"src/*": ["src/*"]
-		},
-		"types": [
-			"svelte",
-			"svelte/store",
-			"svelte/motion",
-			"svelte/transition",
-			"svelte/animate",
-			"svelte/easing",
-			"vite/client"
-		]
-	}
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "src",
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "5.0",
+    "isolatedModules": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext"
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.svelte"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
